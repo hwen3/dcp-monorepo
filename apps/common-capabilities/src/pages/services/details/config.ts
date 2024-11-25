@@ -104,40 +104,45 @@ export const specifications = {
     }
 }
 
+/**
+ * dataIn indicates the property where the data should be found
+ * each property in the array can be of a path to the data in case of nested objects
+ * i.e.
+ * {contact: {methods: [{url: "https://example.com"}]}}
+ * dataIn: ['contact'] -> {methods: [{url: "https://example.com"}]}
+ * dataIn: ['contact.methods'] -> [{url: "https://example.com"}]
+ */
 export const bodyItems = {
     "specs": {
         "title": "Specifications",
-        "dataIn": ""
+        "dataIn": Object.keys(specifications)
     },
     "roadmap": {
         "title": "Roadmap",
-        "dataIn": ""
+        "dataIn": null
     },
     "prerequisites": {
         "title": "Prerequisites",
-        "dataIn": ""
+        "dataIn": null
     },
     "useCases": {
         "title": "Use cases",
-        "dataIn": ""
+        "dataIn": null
     },
     "documentation": {
         "title": "Documentation",
-        "dataIn": ""
+        "dataIn": null
     },
     "comments": {
         "title": "Additional information",
-        "dataIn": ""
+        "dataIn": null
     },
     "security": {
         "title": "Security and compliance",
-        "dataIn": ""
+        "dataIn": securityGroups.flatMap(group => group.items)
     },
     "contact": {
         "title": "Contact",
-        "dataIn": "methods"
+        "dataIn": ["contact.methods"]
     }
 }
-
-
- // import {securityGroups, securityData, specifications, bodyItems} from './config' 
