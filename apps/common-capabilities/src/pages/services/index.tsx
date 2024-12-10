@@ -352,7 +352,7 @@ export default function HomePage(): JSX.Element {
           type="secondary"
           onClick={() => (window.location.href = '/addservice/index.html')}
         >
-        <b>Add a new service</b>
+        Add a new service
         </GoAButton>
       </div>
       {/* <span className="last-updated">Last updated: {formattedDate}</span>   <br /> */}
